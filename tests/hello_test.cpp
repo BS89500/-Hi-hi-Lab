@@ -5,6 +5,10 @@
 
 #include "../src/hello.hpp"
 
-TEST_CASE( "it returns Hello World" ) {
-    REQUIRE( hello() == "Hello World!" );
+TEST_CASE( "hello_test" ) {
+    REQUIRE( strcmp_case_insensitive("String one","string two") == -1 );
+    REQUIRE( strcmp_case_insensitive("String one","string one") == 0 );
+    REQUIRE( strcmp_case_insensitive("String Two","string one") == 1 );
+    REQUIRE(strcmp_case_insensitive("abc", "abd") < 0);
+    REQUIRE(strcmp_case_insensitive("caterpillar", "cat") > 0);
 }
